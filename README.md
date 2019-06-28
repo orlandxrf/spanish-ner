@@ -9,8 +9,11 @@ No.| Class | Schema | Description
 ---|-------|-|-----------
 1  | ORG   | B-ORG, I-ORG | Organizations names
 2  | PER   | B-PER, I-PER | People names
-3  | LOC   | | Location names
-4  | MISC  | | Miscellaneous
+3  | LOC   | B-LOC, I-LOC | Location names
+4  | MISC  | B-MISC, I-MISC | Miscellaneous
+
+#### Tags distribution using IOB schema
+![conll_tags_distribution](./img/conll_tags-dist.png)
 
 Parts of data from the corpus CoNLL-2002.
 
@@ -30,8 +33,14 @@ In headings, **Sentences O** are the original sentences length. **Sentences S** 
 
 ![conll_sentences](./img/conll_sentences.png)
 
+***
 
 ### Mx-news data set
+
+#### Tags distribution using IOB schema
+![conll_tags_distribution](./img/conll_tags-dist.png)
+
+Parts of data from the corpus Mx-news.
 
 No.| Partition | Sentences O | Sentences S | Tokens | Tags
 ---|---------|------|------|------|---
