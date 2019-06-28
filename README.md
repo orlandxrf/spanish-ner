@@ -4,7 +4,7 @@ Experiments from NER task in Spanish language using CoNLL-2002 and Mexican news 
 ### CoNLL-2002 dataset
 
 No.| Partition | Sentences O | Sentences S | Tokens | Tags
----|-------|------|------|------|--
+---|-------|------|------|------|---
 1  | Test A| 1915 | 2177 | 9646 | 8
 2  | Test B| 1517 | 1848 | 9086 | 8
 3  | Train| 8323 | 9947 | 26099 | 8
@@ -12,7 +12,7 @@ No.| Partition | Sentences O | Sentences S | Tokens | Tags
 
 CoNLL-2002 ELmo embeddings [Download](http://148.228.13.30/spanish-ner/data/conll-2002-spanish.full.elmo.tar.gz)
 
-#### Sentnce histogram
+#### Sentence histogram
 
 ![conll_sentences](./img/conll_sentences.png)
 
@@ -20,7 +20,7 @@ CoNLL-2002 ELmo embeddings [Download](http://148.228.13.30/spanish-ner/data/conl
 ### Mx-news Dataset
 
 No.| Partition | Sentences O | Sentences S | Tokens | Tags
----|-------_-|------|------|------|--
+---|---------|------|------|------|---
 1  | Split I | 1295 | 1666 | 7628 | 63
 2  | Split II | 1295 | 1677 | 7726 | 63
 3  | Split III | 1297 | 1661 | 7664 | 63
@@ -28,7 +28,7 @@ No.| Partition | Sentences O | Sentences S | Tokens | Tags
 
 Mx-news ELMo embeddings [Download](http://148.228.13.30/spanish-ner/data/mx-news.spanish.full.elmo.tar.gz)
 
-#### Sentnce histogram
+#### Sentence histogram
 
 ![mx-news_sentneces](./img/mx_sentences.png)
 
