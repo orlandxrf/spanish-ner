@@ -1,7 +1,18 @@
 # spanish-ner
 Experiments from NER task in Spanish language using CoNLL-2002 and Mexican news datasets
 
-### CoNLL-2002 dataset
+### CoNLL-2002 data set
+
+The CoNLL-2002 data set has four classes under tagging schema IOB (Inside/Outside/Beginning).
+
+No.| Class | Schema | Description
+---|-------|-|-----------
+1  | ORG   | B-ORG, I-ORG | Organizations names
+2  | PER   | B-PER, I-PER | People names
+3  | LOC   | | Location names
+4  | MISC  | | Miscellaneous
+
+Parts of data from the corpus CoNLL-2002.
 
 No.| Partition | Sentences O | Sentences S | Tokens | Tags
 ---|-------|------|------|------|---
@@ -12,12 +23,15 @@ No.| Partition | Sentences O | Sentences S | Tokens | Tags
 
 CoNLL-2002 ELmo embeddings [Download](http://148.228.13.30/spanish-ner/data/conll-2002-spanish.full.elmo.tar.gz)
 
+In headings, **Sentences O** are the original sentences length. **Sentences S** were splitted to length 50 (tokens).
+
+
 #### Sentence histogram
 
 ![conll_sentences](./img/conll_sentences.png)
 
 
-### Mx-news Dataset
+### Mx-news data set
 
 No.| Partition | Sentences O | Sentences S | Tokens | Tags
 ---|---------|------|------|------|---
