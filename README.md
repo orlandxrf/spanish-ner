@@ -14,7 +14,7 @@ CoNLL-2002 ELmo embeddings [Download](http://148.228.13.30/spanish-ner/data/conl
 
 #### Sentnce histogram
 
-![./img/conll_sentences.png]
+![conll_sentences](./img/conll_sentences.png)
 
 
 ### Mx-news Dataset
@@ -30,7 +30,7 @@ Mx-news ELMo embeddings [Download](http://148.228.13.30/spanish-ner/data/mx-news
 
 #### Sentnce histogram
 
-![./img/conll_sentences.png]
+![mx-news_sentneces](./img/mx_sentences.png)
 
 
 
