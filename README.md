@@ -38,7 +38,7 @@ In headings, **Sentences O** are the original sentences length. **Sentences S** 
 ### Mx-news data set
 
 #### Tags distribution using IOB schema
-![conll_tags_distribution](./img/conll_tags-dist.png)
+![conll_tags_distribution](./img/mx_tags-dist.png)
 
 Parts of data from the corpus Mx-news.
 
