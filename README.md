@@ -1,9 +1,11 @@
 # spanish-ner
-Experiments from NER task in Spanish language using CoNLL-2002 and Mexican news data sets
+Experiments from NER task in Spanish language using CoNLL-2002 and Mexican news datasets
 
-### CoNLL-2002 data set
+## Datasets
 
-The CoNLL-2002 data set is in the language Spanish and it has four classes under tagging schema IOB (Inside/Outside/Beginning).
+### CoNLL-2002 dataset
+
+The CoNLL-2002 dataset is in the language Spanish and it has four classes under tagging schema IOB (Inside/Outside/Beginning).
 
 No.| Class | IOB Schema     | Description
 ---|-------|----------------|:-----------
@@ -12,10 +14,7 @@ No.| Class | IOB Schema     | Description
 3  | LOC   | B-LOC, I-LOC   | Location names
 4  | MISC  | B-MISC, I-MISC | Miscellaneous
 
-#### Tags distribution using IOB schema
-![conll_tags_distribution](./img/conll_tags-dist.png)
-
-For the experiments was split the CoNLL-2002 data set in four partitions.
+For the experiments was split the CoNLL-2002 dataset in four partitions.
 
 No.| Partition | Sentences O | Sentences S | Tokens | Tags
 ---|-----------|------------:|------------:|-------:|---
@@ -24,20 +23,13 @@ No.| Partition | Sentences O | Sentences S | Tokens | Tags
 3  | Train     | 8323        | 9947        | 26099  | 8
 4  | Ensemble  | 11755       | 13972       | 31405  | 8
 
-CoNLL-2002 ELmo embeddings [Download](http://148.228.13.30/spanish-ner/data/conll-2002-spanish.full.elmo.tar.gz)
-
 In headings, **Sentences O** are the original sentences length. **Sentences S** were splitted to length 50 (tokens).
-
-
-#### Sentence histogram
-
-![conll_sentences](./img/conll_sentences.png)
 
 ***
 
-### Mx-news data set
+### Mx-news dataset
 
-The Mx-news data set was built on the political news domain using 250 documents, it is in the language Spanish and it has seventeen classes. One annotator used tagging schema IOBES (Inside/Outside/Beginning/End/Single) to labeled this corpus.
+The Mx-news dataset was built on the political news domain using 250 documents, it is in the language Spanish and it has seventeen classes. One annotator used tagging schema IOBES (Inside/Outside/Beginning/End/Single) to labeled this corpus.
 
 No.| Class | IOB Schema                 | Description
 ---|-------|----------------------------|:------------------------------------------------
@@ -59,10 +51,7 @@ No.| Class | IOB Schema                 | Description
 16 |  AGE  | B-AGE, I-AGE, E-AGE, ----- | People age
 17 |  LOC  | B-LOC, I-LOC, E-LOC, S-LOC | Locations about regions, rivers, lakes
 
-#### Tags distribution using IOB schema
-![conll_tags_distribution](./img/mx_tags-dist.png)
-
-For the experiments was split the Mx-news data set in four partitions.
+For the experiments was split the Mx-news dataset in four partitions.
 
 No.| Partition | Sentences O | Sentences S | Tokens | Tags
 ---|-----------|------------:|------------:|-------:|---
@@ -73,11 +62,14 @@ No.| Partition | Sentences O | Sentences S | Tokens | Tags
 
 In headings, **Sentences O** are the original sentences length. **Sentences S** were splitted to length 50 (tokens).
 
-Mx-news ELMo embeddings [Download](http://148.228.13.30/spanish-ner/data/mx-news.spanish.full.elmo.tar.gz)
+***
 
-#### Sentence histogram
+### ELMo word embeddings
 
-![mx-news_sentneces](./img/mx_sentences.png)
+The ELMo word embeddings were trained using [elmoformanylangs](https://github.com/HIT-SCIR/ELMoForManyLangs) Python library.
+
+CoNLL-2002 ELmo embeddings [Download](http://148.228.13.30/spanish-ner/data/full.conll-2002.elmo.tar.gz)
+Mx-news ELMo embeddings [Download](http://148.228.13.30/spanish-ner/data/full.mx-news.elmo.tar.gz)
 
 
 
