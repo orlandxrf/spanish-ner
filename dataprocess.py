@@ -184,19 +184,17 @@ class ProcessELMo(object):
 	"""Clase para crear embeddings con ELMo en español y usar estos embeddings para Redes en keras"""
 
 	def trainELMoToFile(self, elmoModelPath, filename, words, vocab_size):
-		"""
-		Crear embeddings para ser guardados en filename.
+		"""Build ELMo word embeddings
 
-		filename: nombre del archivo para guardar los embeddings.
-		words: lista de todas las palabras del vocabulario (únicas).
-		vocab_size: tamaño del vocabulario (words).
+		filename: filename to save word embeddings
+		words: word list (vocabulary)
+		vocab_size: length of word list (vocabulary)
 
-		https://github.com/HIT-SCIR/ELMoForManyLangs
+		visit to https://github.com/HIT-SCIR/ELMoForManyLangs to download Spanish model and set up some stuffs.
 		"""
 		from elmoformanylangs import Embedder
 		import numpy as np
-		e = Embedder(elmoModelPath) # cargar mi modelo ELMo.es
-		# e = Embedder('/home/orlando/nns/ELMo.es/') # cargar mi modelo ELMo.es
+		e = Embedder(elmoModelPath) # path from loaded model (e.g. /home/user/project/ELMo.es/)
 		embedding_matrix = np.zeros((vocab_size, 1024))
 
 		for i, word in enumerate(words):
@@ -205,18 +203,17 @@ class ProcessELMo(object):
 				strnums = [str(num) for num in aux_elmo[0][0].tolist()]
 				strnums = ' '.join(strnums)
 				g.write( "{} {}\n".format(word, strnums ) )
-				print ("Processing \t{} of {}...".format( i+1, len(words)) )
+				# print ("Processing \t{} of {}...".format( i+1, len(words)) )
 			g.close()
 
 
 	def loadELMoFromFile(self, filename, vocab_size, emb_length=1024, vb=True):
-		"""
-		Cargar el Modelo ELMo de un archivo de texto. Dentro de una embeddings matrix.
+		"""Load ELMo model and return the embeddings matrix
 
-		filename: nombre del archivo de embeddings ELMo.
-		vocab_size: tamaño del vocabulario (words). El tamaño debe de ser de 9619.
-		emb_length: longitud de los embeddings. El default debería ser 1024.
-		vb: mostrar número de embeddings mientras se lee el archivo.
+		filename: ELMo model filename
+		vocab_size: vocabulary length
+		emb_length: embeddings length (default 1024)
+		vb: show loading of vectors
 		"""
 		import sys
 		import numpy as np
@@ -235,7 +232,7 @@ class ProcessELMo(object):
 		return embedding_matrix
 
 class ConfusionMatrix(object):
-	"""Clase para obtener la matriz de confusion"""
+	"""Class to build confusion matrix"""
 
 	def __init__(self):
 		self.tags = {}
@@ -286,13 +283,11 @@ class ConfusionMatrix(object):
 
 
 	def multilabelConfusionMatrix(self, y_test, y_pred, percentage=False):
-		"""Método para construir la matriz de confusión.
-		y_true: conjunto de datos del Test.
-		y_pred: conjunto de datos predecidos.
+		"""Build confusion matrix
+		y_true: test dataset
+		y_pred: predicted dataset
 		"""
 		import numpy as np
-		# tags = self.getEntitiesWithO(y_true, y_pred, sortbydist=sortbydist)
-		# self.tags = tags
 		tags = {}
 		tags = self.getTags(y_test, tags) # get tags from y_test
 		tags = self.getTags(y_pred, tags) # get tags from y_test and y_pred
@@ -468,7 +463,7 @@ class PlotData(object):
 		if show: plt.show()
 
 	def plotAccAndLoss(self, trainA, validationA, trainL, validationL, title='Título', show=True, prefix='no-prefix_', imgName='plotmultiplefunction', png=False, pdf=False):
-		"""Método para graficar la exactitud y pérdida del train and validation"""
+		"""Plot the accuracy and loss of the train and validation"""
 		import matplotlib.pyplot as plt
 
 		markers = ['^', 'o', 's']
@@ -510,28 +505,5 @@ class Tools(object):
 		g = open(filename, mode)
 		g.write('{}\n'.format(data))
 		g.close()
-
-	def xtest2words(self, X_test):
-		"""Transform index & feature matrix to word sentences"""
-		res = []
-		for feat in X_test:
-			tmplst = []
-			for tok in feat:
-				word = ''
-				if tok['word.isupper()']: word = tok['word.lower()'].upper()
-				elif tok['word.istitle()']: word = tok['word.lower()'].title()
-				else: word = tok['word.lower()']
-				tmplst.append(word)
-			res.append(tmplst)
-		return res
-
-	def getTagsFromTest(self, y_test):
-		"""To check tags (classes) from in test data, it can be useful in the process of to check the classes balance in test data."""
-		from seqeval.metrics.sequence_labeling import get_entities
-		lst = [ls for sublist in y_test for ls in sublist]
-		tags = set( [tg[0] for tg in get_entities(lst)] )
-		tags = list(tags)
-		tags.sort()
-		print ('{}\t{}'.format(len(tags), tags))
 
 
