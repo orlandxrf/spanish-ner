@@ -1,0 +1,12 @@
+elmoformanylangs==0.0.2
+graphviz==0.10.1
+Keras==2.2.4
+Keras-Applications==1.0.7
+keras-contrib==2.0.8
+Keras-Preprocessing==1.0.9
+matplotlib==3.0.3
+numpy==1.16.2
+seqeval==0.0.10
+scikit-learn==0.20.3
+sklearn-crfsuite==0.3.6
+tensorflow==1.13.1
