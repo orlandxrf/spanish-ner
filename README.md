@@ -1,7 +1,7 @@
 # Probabilistic vs Deep Learning based approaches for narrow domain NER in Spanish
 Experiments from NER task in Spanish language using two corpora: CoNLL-2002 and Mexican news
 
-## Corpora
+## Data
 
 ### CoNLL-2002 dataset
 
@@ -14,16 +14,16 @@ No.| Class | IOB Schema     | Description
 3  | LOC   | B-LOC, I-LOC   | Location names
 4  | MISC  | B-MISC, I-MISC | Miscellaneous
 
-For the experiments was split the CoNLL-2002 dataset in four partitions.
+The CoNLL-2002 dataset was split into four partitions.
 
-No.| Partition | Sentences O | Sentences S | Tokens | Tags
+No.| Partition | Original    | Split       | Tokens | Tags
 ---|-----------|------------:|------------:|-------:|---
 1  | Test A    | 1915        | 2177        | 9646   | 8
 2  | Test B    | 1517        | 1848        | 9086   | 8
 3  | Train     | 8323        | 9947        | 26099  | 8
 4  | Ensemble  | 11755       | 13972       | 31405  | 8
 
-In headings, **Sentences O** are the original sentences length. **Sentences S** were splitted to length 50 (tokens).
+In headings, **Original** are the original sentences length. **Split** were splitted to length 50 (tokens).
 
 ***
 
@@ -51,16 +51,16 @@ No.| Class | IOB Schema                 | Description
 16 |  AGE  | B-AGE, I-AGE, E-AGE, ----- | People age
 17 |  LOC  | B-LOC, I-LOC, E-LOC, S-LOC | Locations about regions, rivers, lakes
 
-For the experiments was split the Mx-news dataset in four partitions.
+The Mx-news dataset was split into four partitions.
 
-No.| Partition | Sentences O | Sentences S | Tokens | Tags
+No.| Partition | Original    | Split       | Tokens | Tags
 ---|-----------|------------:|------------:|-------:|---
 1  | Split I   | 1295        | 1666        | 7628   | 63
 2  | Split II  | 1295        | 1677        | 7726   | 63
 3  | Split III | 1297        | 1661        | 7664   | 63
 4  | Ensemble  | 3888        | 5004        | 13273  | 65
 
-In headings, **Sentences O** are the original sentences length. **Sentences S** were splitted to length 50 (tokens).
+In headings, **Original** are the original sentences length. **Split** were splitted to length 50 (tokens).
 
 ***
 
