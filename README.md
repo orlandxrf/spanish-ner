@@ -1,7 +1,7 @@
-# spanish-ner
-Experiments from NER task in Spanish language using CoNLL-2002 and Mexican news datasets
+# Probabilistic vs Deep Learning based approaches for narrow domain NER in Spanish
+Experiments from NER task in Spanish language using two corpora: CoNLL-2002 and Mexican news
 
-## Datasets
+## Corpora
 
 ### CoNLL-2002 dataset
 
