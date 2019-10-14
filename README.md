@@ -68,8 +68,9 @@ In headings, **Original** are the original sentences length. **Split** were spli
 
 The ELMo word embeddings were trained using [elmoformanylangs](https://github.com/HIT-SCIR/ELMoForManyLangs) Python library.
 
-CoNLL-2002 ELmo embeddings [Download](http://148.228.13.30/spanish-ner/data/full.conll-2002.elmo.tar.gz)
-Mx-news ELMo embeddings [Download](http://148.228.13.30/spanish-ner/data/full.mx-news.elmo.tar.gz)
+[Download](http://148.228.13.30/spanish-ner/data/full.conll-2002.elmo.tar.gz) CoNLL-2002 ELmo embeddings
+
+[Download](http://148.228.13.30/spanish-ner/data/full.mx-news.elmo.tar.gz) Mx-news ELMo embeddings
 
 
 
