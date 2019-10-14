@@ -32,16 +32,17 @@ class Sentences(object):
 		return sentences
 
 	def getSpecificLengthSentences(self, maxlength):
-		"""Obtener una lista de lista de oraciones a partir de un corpus.
-		max_length: longitud de palabras que contendra cada oración como máximo.
+		"""
+		Get sentences list from corpus
+		max_length: max words length of each sentence
 		"""
 		tmp_sent = []
 		sentences = []
 		with open(self.filename, 'r') as f:
 			for i, line in enumerate(f):
-				if i == 0: continue # encabezado del archivo (omitir)
+				if i == 0: continue # headers (skip)
 				line = line.replace('\n','').split('\t')[1:]
-				if len(line) == 0: # separador de oraciones
+				if len(line) == 0: # sentences separator
 					if len(tmp_sent) > maxlength:
 						nlength = len(tmp_sent) // maxlength
 						resto = len(tmp_sent) % maxlength
@@ -66,11 +67,16 @@ class Sentences(object):
 		return sentences
 
 	def __getWordIndexes(self):
-		"""Obtiene el índice de palabras en un diccionario a partir de una vocabulario (lista de palabras)"""
+		"""
+		Get word and tag indexes from vocabulary
+		"""
 		self.word2idx = {w: i for i, w in enumerate(self.words)}
 		self.tag2idx = {w: i for i, w in enumerate(self.tags)}
 
 	def __sentencesToIndexes(self, sentences):
+		"""
+		Get coded sentences using their indexes
+		"""
 		self.X = [[self.word2idx[w[0]] for w in s] for s in sentences]
 		self.y = [[self.tag2idx[w[2]] for w in s] for s in sentences]
 
@@ -181,16 +187,19 @@ class Sentences(object):
 		return sentences
 
 class ProcessELMo(object):
-	"""Clase para crear embeddings con ELMo en español y usar estos embeddings para Redes en keras"""
+	"""Clase para crear embeddings con ELMo en español y usar estos embeddings para Redes en keras
+	Class to make ELMo embeddings
+	"""
 
 	def trainELMoToFile(self, elmoModelPath, filename, words, vocab_size):
 		"""Build ELMo word embeddings
-
+		
+		elmoModelPath: the absolute path from the model to process*
 		filename: filename to save word embeddings
 		words: word list (vocabulary)
 		vocab_size: length of word list (vocabulary)
 
-		visit to https://github.com/HIT-SCIR/ELMoForManyLangs to download Spanish model and set up some stuffs.
+		* visit to https://github.com/HIT-SCIR/ELMoForManyLangs#downloads to download Spanish model and check set ups.
 		"""
 		from elmoformanylangs import Embedder
 		import numpy as np
@@ -383,8 +392,8 @@ class PlotData(object):
 					)
 
 		plt.tight_layout()
-		plt.ylabel('Clases Verdaderas', fontsize=fontsize)
-		plt.xlabel('Clases Predecidas', fontsize=fontsize)
+		plt.ylabel('True classes', fontsize=fontsize)
+		plt.xlabel('Predicted classes', fontsize=fontsize)
 		if png: plt.savefig(imgName+'.png', bbox_inches='tight')
 		if pdf: plt.savefig(imgName+'.pdf', bbox_inches='tight')
 		if show: plt.show()
@@ -392,62 +401,48 @@ class PlotData(object):
 	def plotXMetric(self, result1, result2, metrics, title1, title2, supertitle='', metric='', imgName='image', show=True, png=False, eps=False):
 		import matplotlib.pyplot as plt
 		indexes = list(range(0, len(result1[0][0])))
-		# labels = [str(i+1)+'\nClass' if i==0 else str(i+1)+'\nClasses' for i in indexes]
 		labels = [str(i+1) for i in indexes]
 		ylim = 1.05
-
 		markers = ['o','s','X','*']
-		# colors = ['k','k','k','k']
 		colors = ['red','darkgreen','m','dodgerblue']
-
 		linestyles = [':', '-.', '--', '-']
-
-		# dashList = [(5,2),(2,5),(4,10),(3,3,2,2),(5,2,20,2)] # para tener multiples linestyle
 
 		plt.figure(figsize=(15,8))
 		plt.subplot(2, 2, 1)
-		# plt.ylim(0, ylim)
 		for i, arr in enumerate(result1[0]): plt.plot(arr, label=metrics[i], color=colors[i], linestyle=linestyles[i])
 		plt.title('Evaluación$_i$ ' + title1, fontsize='16')
 		plt.xticks(indexes, labels)
 		plt.ylabel(metric+'$_i$', fontsize='14')
-		# plt.xlabel('classes')
 		plt.xlabel('clases', fontsize='14')
 		plt.legend(loc='best')
 		plt.tight_layout()
 		plt.grid()
 
 		plt.subplot(2, 2, 2)
-		# plt.ylim(0, ylim)
 		for i, arr in enumerate(result1[1]): plt.plot(arr, label=metrics[i], color=colors[i], linestyle=linestyles[i])
 		plt.title('Evaluación$_c$ ' + title1, fontsize='16')
 		plt.xticks(indexes, labels)
 		plt.ylabel(metric+'$_c$', fontsize='14')
-		# plt.xlabel('classes')
 		plt.xlabel('clases', fontsize='14')
 		plt.legend(loc='best')
 		plt.tight_layout()
 		plt.grid()
 
 		plt.subplot(2, 2, 3)
-		# plt.ylim(0, ylim)
 		for i, arr in enumerate(result2[0]): plt.plot(arr, label=metrics[i], color=colors[i], linestyle=linestyles[i])
 		plt.title('Evaluación$_i$ ' + title2, fontsize='16')
 		plt.xticks(indexes, labels)
 		plt.ylabel(metric+'$_i$', fontsize='14')
-		# plt.xlabel('classes')
 		plt.xlabel('clases', fontsize='14')
 		plt.legend(loc='best')
 		plt.tight_layout()
 		plt.grid()
 
 		plt.subplot(2, 2, 4)
-		# plt.ylim(0, ylim)
 		for i, arr in enumerate(result2[1]): plt.plot(arr, label=metrics[i], color=colors[i], linestyle=linestyles[i])
 		plt.title('Evaluación$_c$ ' + title2, fontsize='16')
 		plt.xticks(indexes, labels)
 		plt.ylabel(metric+'$_c$', fontsize='14')
-		# plt.xlabel('classes')
 		plt.xlabel('clases', fontsize='14')
 		plt.legend(loc='best')
 		plt.tight_layout()
