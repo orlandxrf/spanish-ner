@@ -69,11 +69,11 @@ def executeBiLSTMELMo(embedding_matrix, filename, SENTENCE_LENGTH, RANDOM, EMBED
 	print (metric2)
 
 	# Save results
-	testwords = getter.xtest2wordsBiLSTM(X_te)
-	tool = dt.Tools()
-	tool.saveEval(path+'bilstm-elmo_res.txt', '{}\n{}\n{}'.format(metric1, metric2, ln), 'a')
-	tool.saveEval(path+'bilstm-elmo_eva.txt', '{}\t{}\t{}'.format(testwords, test_labels, pred_labels), 'a')
-	tool.saveEval(path+'bilstm-elmo_his.txt', '{}\t{}\t{}\t{}'.format(history.history['acc'], history.history['val_acc'], history.history['loss'], history.history['val_loss']), 'a')
+	# testwords = getter.xtest2wordsBiLSTM(X_te)
+	# tool = dt.Tools()
+	# tool.saveEval(path+'bilstm-elmo_res.txt', '{}\n{}\n{}'.format(metric1, metric2, ln), 'a')
+	# tool.saveEval(path+'bilstm-elmo_eva.txt', '{}\t{}\t{}'.format(testwords, test_labels, pred_labels), 'a')
+	# tool.saveEval(path+'bilstm-elmo_his.txt', '{}\t{}\t{}\t{}'.format(history.history['acc'], history.history['val_acc'], history.history['loss'], history.history['val_loss']), 'a')
 
 	# Plot results: accuracy and loss
 	viz = dt.PlotData()
