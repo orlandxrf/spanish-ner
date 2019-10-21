@@ -34,7 +34,7 @@ In headings, **Original** are the original sentences length. **Split** were spli
 
 ### CoNLL-2002 dataset distribution
 
-CoNLL-2002 dataset is labeled under IOB (Inside/Beginning/Out) schema
+The plot shows the tags/classes distribution from dataset under IOB schema. In the chart, the x-axis shows the four classes and the y-axis describe the number of entities per class.
 
 ![alt CoNLL-2002 dataset distributio](img/conll_tags-dist.png)
 
@@ -89,13 +89,13 @@ In headings, **Original** are the original sentences length. **Split** were spli
 
 ### Mx-news dataset distribution (seventeen classes)
 
-Mx-news dataset was labeled under IOBES (Inside/Out/Beginning/End/Single) schema.
+The plot shows the tags/classes distribution from dataset under IOBES schema. In the chart, the x-axis shows the seventeen classes and the y-axis describe the number of entities per class.
 
 ![alt Mx-news dataset distribution 17](img/mx_tags-dist_17.png)
 
 ### Mx-news dataset distribution (seventeen classes)
 
-Mx-news dataset was reduced to four classes: ORG, PER, LOC, MISC (the fourteen left) is labeled under IOB (Inside/Beginning/Out) schema.
+Mx-news dataset was reduced to four classes: ORG, PER, LOC, MISC (the fourteen left) is labeled under IOB (Inside/Beginning/Out) schema. The plot shows the tags/classes distribution from dataset under IOB schema. In the chart, the x-axis shows the four classes and the y-axis describe the number of entities per class.
 
 ![alt Mx-news dataset distribution 4](img/mx_tags-dist_4.png)
 
@@ -115,7 +115,7 @@ The ELMo word embeddings were trained using [elmoformanylangs](https://github.co
 
 ## Requirements
 
-The Python libraries used are:
+The Python libraries used:
 
 * elmoformanylangs==0.0.2
 * graphviz==0.10.1
