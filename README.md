@@ -25,6 +25,10 @@ No.| Partition | Original    | Split       | Tokens | Tags
 
 In headings, **Original** are the original sentences length. **Split** were splitted to length 50 (tokens).
 
+CoNLL-2002 Sentences histogram
+
+![alt CoNLL-2002 Sentences histogram](../img/conll_sentences.png)
+
 ***
 
 ### Mx-news dataset
@@ -61,6 +65,10 @@ No.| Partition | Original    | Split       | Tokens | Tags
 4  | Ensemble  | 3888        | 5004        | 13273  | 65
 
 In headings, **Original** are the original sentences length. **Split** were splitted to length 50 (tokens).
+
+Mx-news Sentences histogram
+
+![alt Mx-news Sentences histogram](../img/mx_sentences.png)
 
 ***
 
