@@ -27,7 +27,9 @@ In headings, **Original** are the original sentences length. **Split** were spli
 
 ### CoNLL-2002 dataset distribution
 
-![alt CoNLL-2002 dataset distributio](img/conll-tags-dist.png)
+CoNLL-2002 dataset is labeled under IOB (Inside/Beginning/Out) schema
+
+![alt CoNLL-2002 dataset distributio](img/conll_tags-dist.png)
 
 ### CoNLL-2002 Sentences histogram
 
@@ -73,10 +75,13 @@ In headings, **Original** are the original sentences length. **Split** were spli
 
 ### Mx-news dataset distribution (seventeen classes)
 
+Mx-news dataset was labeled under IOBES (Inside/Out/Beginning/End/Single) schema.
+
 ![alt Mx-news dataset distribution 17](img/mx_tags-dist_17.png)
 
-
 ### Mx-news dataset distribution (seventeen classes)
+
+Mx-news dataset was reduced to four classes: ORG, PER, LOC, MISC (the fourteen left) is labeled under IOB (Inside/Beginning/Out) schema.
 
 ![alt Mx-news dataset distribution 4](img/mx_tags-dist_4.png)
 
@@ -94,7 +99,22 @@ The ELMo word embeddings were trained using [elmoformanylangs](https://github.co
 
 [Download](http://148.228.13.30/spanish-ner/data/full.mx-news.elmo.tar.gz) Mx-news ELMo embeddings
 
+## Requirements
 
+The Python libraries used are:
+
+* elmoformanylangs==0.0.2
+* graphviz==0.10.1
+* Keras==2.2.4
+* Keras-Applications==1.0.7
+* keras-contrib==2.0.8
+* Keras-Preprocessing==1.0.9
+* matplotlib==3.0.3
+* numpy==1.16.2
+* seqeval==0.0.10
+* scikit-learn==0.20.3
+* sklearn-crfsuite==0.3.6
+* tensorflow==1.13.1
 
 
 
