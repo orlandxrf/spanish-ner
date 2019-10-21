@@ -27,7 +27,7 @@ In headings, **Original** are the original sentences length. **Split** were spli
 
 CoNLL-2002 Sentences histogram
 
-![alt CoNLL-2002 Sentences histogram](../img/conll_sentences.png)
+![alt CoNLL-2002 Sentences histogram](https://github.com/orlandxrf/spanish-ner/img/conll_sentences.png)
 
 ***
 
