@@ -11,8 +11,8 @@ The CoNLL-2002 dataset is in the language Spanish and it has four classes under 
 
 *El presidente **Andrés Manuel López Obrador** estará viajando a la ciudad de **Puebla de Zaragoza** este Miércoles .*
 
-**PERSON**: Andrés-PER-B Manuel-PER-I López-PER-I Obrador-PER-I</br>
-**LOCATION**: Puebla-LOC-B de-LOC-I Zaragoza-LOC-I
+**PERSON**: **Andrés**-PER-B **Manuel**-PER-I **López**-PER-I **Obrador**-PER-I<br />
+**LOCATION**: **Puebla**-LOC-B **de**-LOC-I **Zaragoza**-LOC-I
 
 No.| Class | IOB Schema     | Description
 ---|-------|----------------|:-----------
@@ -51,9 +51,9 @@ Using the previous Spanish sentence example with IOBES schema:
 
 *El presidente **Andrés Manuel López Obrador** estará viajando a la ciudad de **Puebla de Zaragoza** este **Miércoles** .*
 
-**PERSON**: Andrés-PER-B Manuel-PER-I López-PER-I Obrador-PER-E<br />
-**LOCATION**: Puebla-LOC-B de-LOC-I Zaragoza-LOC-E<br />
-**DATE**: Miércoles-DAT-S
+**PERSON**: **Andrés**-PER-B **Manuel**-PER-I **López**-PER-I **Obrador**-PER-E<br />
+**LOCATION**: **Puebla**-LOC-B **de**-LOC-I **Zaragoza**-LOC-E<br />
+**DATE**: **Miércoles**-DAT-S
 
 No.| Class | IOB Schema                 | Description
 ---|-------|----------------------------|:------------------------------------------------
