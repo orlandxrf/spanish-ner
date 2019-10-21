@@ -68,7 +68,7 @@ In headings, **Original** are the original sentences length. **Split** were spli
 
 Mx-news Sentences histogram
 
-![alt Mx-news Sentences histogram](../img/mx_sentences.png)
+![alt Mx-news Sentences histogram](img/mx_sentences.png)
 
 ***
 
