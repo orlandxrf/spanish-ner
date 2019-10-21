@@ -7,9 +7,10 @@ The datasets used are described as follows:
 
 ### CoNLL-2002 dataset
 
-The CoNLL-2002 dataset is in the language Spanish and it has four classes under tagging schema IOB (Inside/Outside/Beginning). An Spanish sentence example with IOB schema is: 
+The CoNLL-2002 dataset is in the language Spanish and it has four classes under tagging schema IOB (Inside/Outside/Beginning). A Spanish sentence example with IOB schema is: 
 
 *El presidente **Andrés Manuel López Obrador** estará viajando a la ciudad de **Puebla de Zaragoza** este Miércoles .*
+
 **PERSON**: Andrés-PER-B Manuel-PER-I López-PER-I Obrador-PER-I
 **LOCATION**: Puebla-LOC-B de-LOC-I Zaragoza-LOC-I
 
@@ -49,6 +50,7 @@ The Mx-news dataset was built on the political news domain using 250 documents, 
 Using the previous Spanish sentence example with IOBES schema:
 
 *El presidente **Andrés Manuel López Obrador** estará viajando a la ciudad de **Puebla de Zaragoza** este **Miércoles** .*
+
 **PERSON**: Andrés-PER-B Manuel-PER-I López-PER-I Obrador-PER-E
 **LOCATION**: Puebla-LOC-B de-LOC-I Zaragoza-LOC-E
 **DATE**: Miércoles-DAT-S
