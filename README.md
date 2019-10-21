@@ -40,6 +40,8 @@ The plot shows the tags/classes distribution from dataset under IOB schema. In t
 
 ### CoNLL-2002 Sentences histogram
 
+The histogram is used to identify the sentences-length from the dataset.
+
 ![alt CoNLL-2002 Sentences histogram](img/conll_sentences.png)
 
 ***
@@ -100,6 +102,8 @@ Mx-news dataset was reduced to four classes: ORG, PER, LOC, MISC (the fourteen l
 ![alt Mx-news dataset distribution 4](img/mx_tags-dist_4.png)
 
 ### Mx-news Sentences histogram
+
+The histogram is used to identify the sentences-length from the dataset. The [Natural Language Toolkit](https://www.nltk.org/) was used to split sentences.
 
 ![alt Mx-news Sentences histogram](img/mx_sentences.png)
 
