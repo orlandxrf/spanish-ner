@@ -5,7 +5,7 @@ Keras-Applications==1.0.7
 keras-contrib==2.0.8
 Keras-Preprocessing==1.0.9
 matplotlib==3.0.3
-numpy==1.16.2
+numpy==1.22.0
 seqeval==0.0.10
 scikit-learn==0.20.3
 sklearn-crfsuite==0.3.6
